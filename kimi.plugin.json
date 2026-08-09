@@ -1,0 +1,12 @@
+{
+  "name": "like-im-5",
+  "version": "0.1.0",
+  "description": "Make answers clear, concise, accessible, and visual.",
+  "license": "MIT",
+  "homepage": "https://github.com/sorinmircea/like-im-5",
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Like I’m 5",
+    "shortDescription": "Clear, simple, visual answers for Kimi Code CLI"
+  }
+}

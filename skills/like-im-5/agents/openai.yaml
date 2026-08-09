@@ -1,0 +1,7 @@
+interface:
+  display_name: "Like I’m 5"
+  short_description: "Clear, simple, visual answers for everyone"
+  default_prompt: "Use $like-im-5 to rewrite this in clear, simple, visual language."
+
+policy:
+  allow_implicit_invocation: true

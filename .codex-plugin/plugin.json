@@ -1,0 +1,28 @@
+{
+  "name": "like-im-5",
+  "version": "0.1.0",
+  "description": "Make Codex answers clear, concise, accessible, and visual.",
+  "author": {
+    "name": "Sorin Mircea",
+    "url": "https://github.com/sorinmircea"
+  },
+  "homepage": "https://github.com/sorinmircea/like-im-5",
+  "repository": "https://github.com/sorinmircea/like-im-5",
+  "license": "MIT",
+  "keywords": ["accessibility", "plain-language", "output-style", "skills", "codex"],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Like I’m 5",
+    "shortDescription": "Clear, simple, visual answers for everyone",
+    "longDescription": "Shape answers with a bird's-eye opening, plain English, short bullets, and useful visuals without losing facts or safety details.",
+    "developerName": "Sorin Mircea",
+    "category": "Productivity",
+    "capabilities": ["Instructions"],
+    "websiteURL": "https://github.com/sorinmircea/like-im-5",
+    "defaultPrompt": [
+      "Use like-im-5 to simplify this answer.",
+      "Rewrite this for an eighth-grade reader.",
+      "Draft an accessible pull request description."
+    ]
+  }
+}

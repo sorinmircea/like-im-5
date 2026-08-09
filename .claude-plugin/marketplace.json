@@ -1,0 +1,14 @@
+{
+  "$schema": "https://www.schemastore.org/claude-code-marketplace.json",
+  "name": "like-im-5",
+  "description": "Plain-language and visual output shaping for Claude Code.",
+  "owner": {"name": "Sorin Mircea"},
+  "plugins": [
+    {
+      "name": "like-im-5",
+      "description": "Clear, concise, visual answers without lost detail.",
+      "source": "./",
+      "category": "productivity"
+    }
+  ]
+}

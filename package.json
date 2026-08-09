@@ -1,0 +1,10 @@
+{
+  "name": "like-im-5",
+  "version": "0.1.0",
+  "description": "Make AI answers clear, concise, accessible, and visual.",
+  "license": "MIT",
+  "homepage": "https://github.com/sorinmircea/like-im-5",
+  "private": true,
+  "keywords": ["pi-package", "agent-skill", "accessibility", "plain-language"],
+  "pi": {"skills": ["./skills"]}
+}

@@ -1,0 +1,30 @@
+# Operating system
+.DS_Store
+
+# Local environment and secrets
+.env
+.env.*
+!.env.example
+.venv/
+venv/
+
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Node
+node_modules/
+
+# Tests and builds
+coverage/
+htmlcov/
+build/
+dist/
+*.log
+
+# Evaluation output
+evals/results/
+evals/runners.json
