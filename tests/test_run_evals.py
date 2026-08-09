@@ -42,6 +42,13 @@ class EvaluationTest(unittest.TestCase):
         self.assertIn("instead of inventing", criteria)
         self.assertIn("checks actually run", criteria)
 
+    def test_repetition_case_measures_total_length(self):
+        cases = {case["id"]: case for case in run_evals.load_cases()}
+        criteria = " ".join(cases["remove-repetition"]["criteria"])
+
+        self.assertIn("instead of rephrasing", criteria)
+        self.assertIn("shorter result", criteria)
+
     def test_duplicate_case_id_is_invalid(self):
         case = {
             "id": "same",

@@ -64,6 +64,20 @@ class PackageTest(unittest.TestCase):
         self.assertLess(why, how)
         self.assertLess(how, proof)
 
+    def test_option_comparisons_prefer_compact_tables(self):
+        text = SKILL.read_text(encoding="utf-8")
+
+        self.assertIn("one option in each row", text)
+        self.assertIn("shared criteria in columns", text)
+        self.assertIn("recommended option outside the table", text)
+
+    def test_skill_cuts_repetition_and_total_length(self):
+        text = SKILL.read_text(encoding="utf-8")
+
+        self.assertIn("Say each thing once", text)
+        self.assertIn("shorter than the draft", text)
+        self.assertIn("6. Nothing is said twice.", text)
+
     def test_no_scaffold_placeholders_remain(self):
         for path in (SKILL, ROOT / ".codex-plugin/plugin.json", ROOT / "README.md"):
             with self.subTest(path=path):

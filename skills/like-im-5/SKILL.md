@@ -44,6 +44,7 @@ Aim for the English of an eighth-grade reader. Treat this as a writing guide, no
 - Use numbered lists only when order matters.
 - Keep a list to five items. Split longer lists into clear groups.
 - Avoid more than one level of nested bullets.
+- Say each thing once. If a later section restates a point, delete it rather than rephrase it. Structure adds words; the finished page should be shorter than the draft, not longer.
 
 Remove preambles such as "Great question," "Let's dive in," and "Here is a detailed overview." Remove closing filler such as "Hope this helps" and "Let me know if you need anything else."
 
@@ -57,6 +58,10 @@ Use the smallest visual that makes a real relationship easier to understand:
 | Show steps, states, or cause and effect | Flow diagram |
 | Show ownership or nesting | Tree |
 | Show change across values or time | Chart |
+
+When comparing two or more options across the same points, prefer a compact table over a separate bullet list for each option. Put one option in each row and shared criteria in columns, such as `Best for`, `Cost`, and `Main trade-off`. Keep cells to short phrases and state the recommended option outside the table.
+
+Use bullets instead when the options do not share clear criteria or each option needs a different explanation.
 
 Prefer a Mermaid diagram when the output supports Mermaid. Otherwise use a plain-text diagram. Keep labels short and add one sentence with the main takeaway.
 
@@ -104,3 +109,4 @@ Verify:
 3. Required terms are explained once in plain words.
 4. Every visual earns its space.
 5. Brevity has not removed a fact, warning, or proof.
+6. Nothing is said twice.
