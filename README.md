@@ -1,6 +1,6 @@
 # like-im-5
 
-Clear answers should not require expert reading skills.
+Getting an AI answer is easy. Understanding it should be too.
 
 `like-im-5` is an Agent Skill that makes AI output easier to scan, understand, and use. It starts with the big picture, uses plain English, keeps bullets short, and adds a visual only when the visual helps.
 
@@ -12,22 +12,36 @@ Clear answers should not require expert reading skills.
 
 ## What changes
 
-| Before | After |
-| --- | --- |
-| Long setup before the answer | Answer or result first |
-| Dense paragraphs | Short headings and bullets |
-| Jargon with no help | Needed terms explained once |
-| Decorative diagrams | Small visuals that explain a real link |
+| Problem | Typical AI output | With `like-im-5` |
+| --- | --- | --- |
+| Buried answer | “Several factors may cause this build error…” | “`config/app.json` is missing. Create it, then rebuild.” |
+| Too many words | “To begin the installation process, navigate to your terminal…” | “Run `npm install`.” |
+| Unexplained jargon | “Transient read-after-write inconsistency may occur.” | “A saved change may take a few seconds to appear.” |
+| Unclear flow | “The request passes through several infrastructure layers.” | `Browser → CDN → App → Database` |
 
-```mermaid
-flowchart LR
-    A[Main answer] --> B[Short details]
-    B --> C{Would a visual help?}
-    C -->|Yes| D[Add the smallest useful visual]
-    C -->|No| E[Stop]
+The answer becomes easier to find, understand, and use.
+
+## Install
+
+### Codex
+
+```bash
+codex plugin marketplace add sorinmircea/like-im-5 --ref main
+codex plugin add like-im-5@like-im-5
 ```
 
-The skill keeps the path from answer to action short.
+Verify with `codex plugin list`, then invoke the skill with `$like-im-5`.
+
+### Claude Code
+
+```bash
+claude plugin marketplace add sorinmircea/like-im-5
+claude plugin install like-im-5@like-im-5
+```
+
+Verify with `claude plugin list`, then invoke the skill with `/like-im-5`.
+
+For Gemini CLI, Qwen Code, Kimi, Pi, Antigravity, Copilot, Zed, Hermes, and other Agent Skills hosts, see [INSTALL.md](INSTALL.md).
 
 ## Use it
 
@@ -40,8 +54,6 @@ $like-im-5 Draft the pull request description for these changes.
 ```
 
 Hosts that support model-invoked skills can also load it when a request asks for plain, concise, easy-to-scan, or visual writing.
-
-See [INSTALL.md](INSTALL.md) for platform setup.
 
 ## Pull request format
 
@@ -69,7 +81,3 @@ python3 -m unittest discover -s tests
 ```
 
 The evaluation suite checks clarity without allowing correctness, safety, or required detail to get worse.
-
-## Note
-
-`like-im-5` is about broad reading access. It is not a medical tool or diagnosis.
