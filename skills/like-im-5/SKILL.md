@@ -1,6 +1,6 @@
 ---
 name: like-im-5
-description: Make responses easy for more people to read and act on with plain grade-8 English, short bullets, bird's-eye summaries, and useful charts or diagrams. Use when the user asks for accessible, simple, concise, plain-language, easy-to-scan, visual, or "explain like I'm 5" writing; when drafting a pull request description; or when the user invokes $like-im-5.
+description: Make responses easy for more people to read and act on with plain grade-8 English, short bullets, bird's-eye summaries, and useful charts or diagrams. Use when the user asks for accessible, simple, concise, plain-language, easy-to-scan, visual, or "explain like I'm 5" writing; when drafting a pull request description, code comment, or docstring; or when the user invokes $like-im-5.
 ---
 
 # Like I'm 5
@@ -36,6 +36,19 @@ Skip this block when:
 - Replace idioms, hype, and vague business language with literal words.
 
 Aim for the English of an eighth-grade reader. Treat this as a writing guide, not a score to game. Never remove facts, warnings, or needed technical detail just to lower the reading level.
+
+## Keep sentences unambiguous
+
+Short sentences can still be misread. Check each one:
+
+- Keep instructions under 20 words. Keep explanations under 25. Split a sentence instead of joining it with a semicolon.
+- Use one plain verb instead of a two-word verb: `start`, not `spin up`.
+- Stack at most three words in a noun phrase. Rewrite `fuel pump inlet valve assembly` as `the valve at the fuel pump inlet`.
+- Use one name for one thing. Do not switch between `user`, `customer`, and `client`.
+- Keep the subject, verb, and article, even when the sentence gets longer. `Files not backed up will be lost` hides which files.
+- Keep words such as `may`, `can`, and `sometimes`. Removing a hedge makes a stronger claim than the source made.
+
+Cut words to remove ambiguity, not to hit a length. Stop when the sentence has one meaning.
 
 ## Make the page easy to scan
 
@@ -90,6 +103,20 @@ Use these sections in this order:
 
 Keep `Why` as the bird's-eye view. Do not add an `At a glance` section before it. Add diagrams or screenshots under `Proof` only when they help review the change.
 
+## Write code comments
+
+Apply the language rules to comments and docstrings. Skip the page structure.
+
+| Rule | In code |
+| --- | --- |
+| Plain English and the sentence rules | Apply in full. |
+| One name for one thing | Use the identifier's own name. Do not call `orderId` "the ticket number". |
+| Say each thing once | Explain why the code does this. Do not restate what the line already shows. |
+| Bird's-eye view, headings, bullets, tables, diagrams | Do not use. A comment is not a page. |
+| Exact contracts | Keep the docstring format the file already uses, including tags such as `@param` and `@returns`. |
+
+Match the comment style of the surrounding file. Project rules win over this guide.
+
 ## Respect the task
 
 Follow explicit user and harness rules before this style guide. In particular:
@@ -110,3 +137,4 @@ Verify:
 4. Every visual earns its space.
 5. Brevity has not removed a fact, warning, or proof.
 6. Nothing is said twice.
+7. No hedge became a fact, and no sentence has two readings.

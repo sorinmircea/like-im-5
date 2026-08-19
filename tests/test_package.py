@@ -78,6 +78,32 @@ class PackageTest(unittest.TestCase):
         self.assertIn("shorter than the draft", text)
         self.assertIn("6. Nothing is said twice.", text)
 
+    def test_skill_keeps_sentences_unambiguous(self):
+        text = SKILL.read_text(encoding="utf-8")
+
+        self.assertIn("## Keep sentences unambiguous", text)
+        self.assertIn("under 20 words", text)
+        self.assertIn("spin up", text)
+        self.assertIn("Use one name for one thing", text)
+        self.assertIn("Stop when the sentence has one meaning", text)
+        self.assertIn("7. No hedge became a fact", text)
+
+    def test_readme_credits_the_sentence_rule_source(self):
+        text = (ROOT / "README.md").read_text(encoding="utf-8")
+
+        self.assertIn("ASD-STE100", text)
+        self.assertIn("not reproduced", text)
+
+    def test_skill_covers_code_comments(self):
+        text = SKILL.read_text(encoding="utf-8")
+        frontmatter = text.split("---\n", 2)[1]
+
+        self.assertIn("code comment", frontmatter)
+        self.assertIn("docstring", frontmatter)
+        self.assertIn("## Write code comments", text)
+        self.assertIn("A comment is not a page", text)
+        self.assertIn("Use the identifier's own name", text)
+
     def test_no_scaffold_placeholders_remain(self):
         for path in (SKILL, ROOT / ".codex-plugin/plugin.json", ROOT / "README.md"):
             with self.subTest(path=path):

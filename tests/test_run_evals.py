@@ -49,6 +49,28 @@ class EvaluationTest(unittest.TestCase):
         self.assertIn("instead of rephrasing", criteria)
         self.assertIn("shorter result", criteria)
 
+    def test_sentence_clarity_cases_cover_ambiguity_and_hedges(self):
+        cases = {case["id"]: case for case in run_evals.load_cases()}
+
+        for case_id in ("phrasal-verb", "over-compression", "hedge-preservation", "noun-cluster"):
+            with self.subTest(case=case_id):
+                self.assertIn(case_id, cases)
+                self.assertEqual("sentence-clarity", cases[case_id]["category"])
+
+        self.assertIn("may have", " ".join(cases["hedge-preservation"]["criteria"]))
+        self.assertIn("longer", " ".join(cases["over-compression"]["criteria"]))
+
+    def test_code_comment_cases_reject_page_structure(self):
+        cases = {case["id"]: case for case in run_evals.load_cases()}
+
+        for case_id in ("code-comment-rewrite", "docstring-contract", "comment-terminology"):
+            with self.subTest(case=case_id):
+                self.assertIn(case_id, cases)
+                self.assertEqual("code-comment", cases[case_id]["category"])
+
+        self.assertIn("At a glance", " ".join(cases["code-comment-rewrite"]["criteria"]))
+        self.assertIn("@param", " ".join(cases["docstring-contract"]["criteria"]))
+
     def test_duplicate_case_id_is_invalid(self):
         case = {
             "id": "same",

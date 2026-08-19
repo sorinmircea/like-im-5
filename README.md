@@ -73,6 +73,10 @@ Hosts that support model-invoked skills can also load it when a request asks for
 - What tests, screenshots, or checks show it works?
 ```
 
+## Sentence rules
+
+The sentence-level rules follow the structural rules of ASD-STE100 (Simplified Technical English), Issue 9. The standard's approved-word dictionary is not reproduced here.
+
 ## Develop
 
 ```bash
