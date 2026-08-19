@@ -93,6 +93,15 @@ class PackageTest(unittest.TestCase):
 
         self.assertIn("ASD-STE100", text)
         self.assertIn("not reproduced", text)
+        self.assertIn("Simplified Technical English", text)
+        self.assertIn("asd-ste100.org", text)
+
+    def test_readme_documents_code_comment_support(self):
+        text = (ROOT / "README.md").read_text(encoding="utf-8")
+
+        self.assertIn("## Code comments", text)
+        self.assertIn("## Sentence rules", text)
+        self.assertIn("docstring", text)
 
     def test_skill_covers_code_comments(self):
         text = SKILL.read_text(encoding="utf-8")
